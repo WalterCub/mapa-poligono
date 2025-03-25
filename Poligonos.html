@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dibuja tu polígono</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+
+  <style>
+    #map { height: 500px; margin-bottom: 1rem; }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 15% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    pre {
+      background-color: #f0f0f0;
+      padding: 10px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Dibuja tu polígono</h2>
+<div id="map">Cargando mapa...</div>
+
+<!-- Modal para mostrar JSON -->
+<div id="jsonModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h3>Coordenadas del polígono (JSON):</h3>
+    <pre id="jsonOutput"></pre>
+  </div>
+</div>
+
+<!-- JS de Leaflet y dibujo -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+
+<script>
+  function iniciarMapa(lat, lng) {
+    const map = L.map('map').setView([lat, lng], 13);
+
+    // 🌿 Capa satelital de Esri
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' +
+      'World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '© Esri, Maxar, Earthstar Geographics'
+    }).addTo(map);
+
+    // 📍 Marcador de ubicación actual
+    L.marker([lat, lng]).addTo(map)
+      .bindPopup("Tu ubicación actual").openPopup();
+
+    // 🗺️ Divisiones geográficas desde Google Drive (GeoJSON)
+    fetch("https://drive.google.com/uc?export=download&id=12_keKrP7JpyutU4tiG9T-FKfSZyFg98j")
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          style: {
+            color: "#ff6600",
+            weight: 1,
+            fillOpacity: 0.05
+          }
+        }).addTo(map);
+      })
+      .catch(error => {
+        console.error("Error al cargar el GeoJSON:", error);
+      });
+
+    // 🎨 Herramientas de dibujo
+    const drawnItems = new L.FeatureGroup();
+    map.addLayer(drawnItems);
+
+    const drawControl = new L.Control.Draw({
+      draw: {
+        polygon: true,
+        marker: false,
+        polyline: false,
+        rectangle: false,
+        circle: false,
+        circlemarker: false
+      },
+      edit: {
+        featureGroup: drawnItems
+      }
+    });
+    map.addControl(drawControl);
+
+    map.on(L.Draw.Event.CREATED, function (e) {
+      drawnItems.clearLayers();
+      const layer = e.layer;
+      drawnItems.addLayer(layer);
+      const geojson = layer.toGeoJSON();
+      const coords = JSON.stringify(geojson.geometry.coordinates[0], null, 2);
+      mostrarModal(coords);
+    });
+  }
+
+  // Modal emergente
+  function mostrarModal(texto) {
+    document.getElementById('jsonOutput').textContent = texto;
+    document.getElementById('jsonModal').style.display = 'block';
+  }
+
+  document.getElementById('closeModal').onclick = () => {
+    document.getElementById('jsonModal').style.display = 'none';
+  };
+  window.onclick = (e) => {
+    if (e.target == document.getElementById('jsonModal')) {
+      document.getElementById('jsonModal').style.display = 'none';
+    }
+  };
+
+  // 📍 Geolocalización con fallback a Bogotá
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      pos => iniciarMapa(pos.coords.latitude, pos.coords.longitude),
+      err => {
+        alert("No se pudo obtener tu ubicación. Se usará Bogotá.");
+        iniciarMapa(4.65, -74.1);
+      },
+      { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 }
+    );
+  } else {
+    alert("Tu navegador no soporta geolocalización.");
+    iniciarMapa(4.65, -74.1);
+  }
+</script>
+
+</body>
+</html>
