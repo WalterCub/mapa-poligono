@@ -89,7 +89,7 @@
       .bindPopup("Tu ubicación actual").openPopup();
 
     // GeoJSON desde Google Drive
-    fetch("fetch("https://raw.githubusercontent.com/WalterCub/mapa-poligono/main/COLOMBIA.json")
+    fetch("https://raw.githubusercontent.com/WalterCub/mapa-poligono/main/COLOMBIA.json")
       .then(res => res.json())
       .then(data => {
         L.geoJSON(data, {
