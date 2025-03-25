@@ -78,9 +78,8 @@
   function iniciarMapa(lat, lng) {
     const map = L.map('map').setView([lat, lng], 13);
 
-    // Capa satelital de Esri
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' +
-      'World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    // Capa satelital de Esri (corregida)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: '© Esri, Maxar, Earthstar Geographics'
     }).addTo(map);
 
@@ -88,20 +87,21 @@
     L.marker([lat, lng]).addTo(map)
       .bindPopup("Tu ubicación actual").openPopup();
 
+    // Divisiones geográficas desde GitHub
     fetch("https://raw.githubusercontent.com/WalterCub/mapa-poligono/main/divisiones.json")
-  .then(res => res.json())
-  .then(data => {
-    L.geoJSON(data, {
-      style: {
-        color: "#008000", // Verde
-        weight: 1,
-        fillOpacity: 0.05
-      }
-    }).addTo(map);
-  })
-  .catch(error => {
-    console.error("Error al cargar las divisiones:", error);
-  });
+      .then(res => res.json())
+      .then(data => {
+        L.geoJSON(data, {
+          style: {
+            color: "#008000", // Verde
+            weight: 1,
+            fillOpacity: 0.05
+          }
+        }).addTo(map);
+      })
+      .catch(error => {
+        console.error("Error al cargar las divisiones:", error);
+      });
 
     const drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
