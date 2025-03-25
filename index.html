@@ -10,51 +10,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
 
   <style>
-    #map { height: 500px; margin-bottom: 1rem; }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.4);
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
 
-    .modal-content {
-      background-color: #fff;
-      margin: 15% auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 600px;
+    header {
+      background-color: #0078A8;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    .close {
-      float: right;
-      font-size: 24px;
-      font-weight: bold;
+    #map {
+      height: 80vh;
+      width: 100%;
+      margin: 0 auto;
+      border: 2px solid #0078A8;
+    }
+
+    #controls {
+      text-align: center;
+      margin: 1rem 0;
+    }
+
+    #copyButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #0078A8;
+      color: white;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
     }
 
-    pre {
-      background-color: #f0f0f0;
-      padding: 10px;
-      overflow-x: auto;
+    #copyButton:hover {
+      background-color: #005f85;
+    }
+
+    #jsonData {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
     }
   </style>
 </head>
 <body>
 
-<h2>Dibuja tu polígono</h2>
-<div id="map">Cargando mapa...</div>
+<header>
+  <h1>Mapa Interactivo para Dibujar Polígonos</h1>
+</header>
 
-<!-- Modal para mostrar JSON -->
-<div id="jsonModal" class="modal">
-  <div class="modal-content">
-    <span class="close" id="closeModal">&times;</span>
-    <h3>Coordenadas del polígono (JSON):</h3>
-    <pre id="jsonOutput"></pre>
-  </div>
+<div id="map"></div>
+<div id="controls">
+  <button id="copyButton">Copiar coordenadas del polígono</button>
+  <textarea id="jsonData" readonly></textarea>
 </div>
 
 <!-- JS de Leaflet y dibujo -->
@@ -65,17 +78,17 @@
   function iniciarMapa(lat, lng) {
     const map = L.map('map').setView([lat, lng], 13);
 
-    // 🌿 Capa satelital de Esri
+    // Capa satelital de Esri
     L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/' +
       'World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: '© Esri, Maxar, Earthstar Geographics'
     }).addTo(map);
 
-    // 📍 Marcador de ubicación actual
+    // Marcador de ubicación
     L.marker([lat, lng]).addTo(map)
       .bindPopup("Tu ubicación actual").openPopup();
 
-    // 🗺️ Divisiones geográficas desde Google Drive (GeoJSON)
+    // GeoJSON desde Google Drive
     fetch("https://drive.google.com/uc?export=download&id=12_keKrP7JpyutU4tiG9T-FKfSZyFg98j")
       .then(res => res.json())
       .then(data => {
@@ -86,12 +99,8 @@
             fillOpacity: 0.05
           }
         }).addTo(map);
-      })
-      .catch(error => {
-        console.error("Error al cargar el GeoJSON:", error);
       });
 
-    // 🎨 Herramientas de dibujo
     const drawnItems = new L.FeatureGroup();
     map.addLayer(drawnItems);
 
@@ -116,26 +125,20 @@
       drawnItems.addLayer(layer);
       const geojson = layer.toGeoJSON();
       const coords = JSON.stringify(geojson.geometry.coordinates[0], null, 2);
-      mostrarModal(coords);
+      document.getElementById('jsonData').value = coords;
     });
   }
 
-  // Modal emergente
-  function mostrarModal(texto) {
-    document.getElementById('jsonOutput').textContent = texto;
-    document.getElementById('jsonModal').style.display = 'block';
-  }
+  // Botón para copiar JSON
+  document.getElementById('copyButton').addEventListener('click', function() {
+    const textarea = document.getElementById('jsonData');
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    alert("Coordenadas copiadas al portapapeles ✅");
+  });
 
-  document.getElementById('closeModal').onclick = () => {
-    document.getElementById('jsonModal').style.display = 'none';
-  };
-  window.onclick = (e) => {
-    if (e.target == document.getElementById('jsonModal')) {
-      document.getElementById('jsonModal').style.display = 'none';
-    }
-  };
-
-  // 📍 Geolocalización con fallback a Bogotá
+  // Geolocalización con fallback
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       pos => iniciarMapa(pos.coords.latitude, pos.coords.longitude),
