@@ -124,6 +124,9 @@
     });
   }
 
+  const poligono = JSON.stringify([...arrayDeCoordenadas]); // Tu array final
+  window.parent.postMessage({ tipo: "poligono", datos: poligono }, "*");
+
   // Botón para copiar JSON
   document.getElementById('copyButton').addEventListener('click', function() {
     const textarea = document.getElementById('jsonData');
