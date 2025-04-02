@@ -1,0 +1,204 @@
+[
+    {
+      "seccional": "Acacias",
+      "profesionales": [
+        "Jose Neftali Luna Santa",
+        "Rubén Leonardo Castro Perilla"
+      ]
+    },
+    {
+      "seccional": "Aguachica",
+      "profesionales": [
+        "Diego harley ortega reyes",
+        "Bryan Daniel Camacho Henao"
+      ]
+    },
+    {
+      "seccional": "Aguazul",
+      "profesionales": [
+        "Jimy Alexander Chaparro Riveros",
+        "Diego Camilo Peña Quemba",
+        "Jose Omar Ospina G",
+        "Juan Carlos Diaz",
+        "Mayda Audrey Martinez Mejía"
+      ]
+    },
+    {
+      "seccional": "ASIATOL",
+      "profesionales": [
+        "Asistente técnico ASIATOL"
+      ]
+    },
+    {
+      "seccional": "BOGOTÁ, D.C.",
+      "profesionales": [
+        "Mateo Fandiño"
+      ]
+    },
+    {
+      "seccional": "Campoalegre",
+      "profesionales": [
+        "Daniel Andrés Auzaque Espinosa",
+        "Gerson Aldair Ortiz Rengifo",
+        "Diego Benigno Rodriguez"
+      ]
+    },
+    {
+      "seccional": "Caucasia",
+      "profesionales": [
+        "Blanca Celina Contreras Pabon",
+        "Jhonatan Lopez Sanchez",
+        "Patricia De Jesus Lopez Vargas",
+        "Yesid Demoya Diaz",
+        "Yina Paola Alean Ramos"
+      ]
+    },
+    {
+      "seccional": "Cucuta",
+      "profesionales": [
+        "Belkis Tatiana Pinto Mariño",
+        "Edgar Yesid Bello Caicedo",
+        "Ricardo Alfredo Cuevas Rios",
+        "Yurley Mayorga Rueda"
+      ]
+    },
+    {
+      "seccional": "Espinal",
+      "profesionales": [
+        "Juan Camilo Barrero Rubio",
+        "Dario Fernando Pineda Suarez",
+        "Mechel Yurany Lopez Rincon",
+        "Katerine Forero Guarin"
+      ]
+    },
+    {
+      "seccional": "Fundación",
+      "profesionales": [
+        "Esneider Mauricio Vera Suarez"
+      ]
+    },
+    {
+      "seccional": "Granada",
+      "profesionales": [
+        "Luis Ferney Gutierrez Jaimes",
+        "Robert Andrey Gaitan Garay",
+        "Jhonatan Julian Diaz Malaver"
+      ]
+    },
+    {
+      "seccional": "Ibague",
+      "profesionales": [
+        "Juan Sebastian Monroy Colmenares",
+        "Haider Mauricio Ortiz",
+        "German Augusto Vargas"
+      ]
+    },
+    {
+      "seccional": "Jamundí",
+      "profesionales": [
+        "Jaby Arley Peñuela Carvajal",
+        "Laura Dayana Marroquin Pinillos"
+      ]
+    },
+    {
+      "seccional": "Magangue",
+      "profesionales": [
+        "Adanies Lugo Gómez",
+        "Estefany Guerrero Muñoz",
+        "Mari Claudia Bustamante",
+        "Maria Jose Durango Vargas",
+        "Miguel Ramiro Buelvas Jimenez",
+        "Yani Sandrid Vargas Mendoza"
+      ]
+    },
+    {
+      "seccional": "Montería",
+      "profesionales": [
+        "Diana Marcela Madera Narváez",
+        "Cristo Rafael Perez",
+        "Juan Daniel Carvajal Lopez",
+        "Maria Alejandra Contreras Marquez",
+        "Nora Camila Osorio Torres",
+        "Enrique Alfredo Saavedra De Castro",
+        "Ana Elena De la Ossa Quiñones",
+        "Shirley Toro"
+      ]
+    },
+    {
+      "seccional": "Neiva",
+      "profesionales": [
+        "Leonardo Cardona Sanchez",
+        "Mariana Quiñonez Bonilla",
+        "Anyela Valentina Guzman Vargas",
+        "Andres Velandia"
+      ]
+    },
+    {
+      "seccional": "Puerto López",
+      "profesionales": [
+        "Herbert Ferney Bautista"
+      ]
+    },
+    {
+      "seccional": "Saldaña",
+      "profesionales": [
+        "Andres Mauricio Gutierrez Mejia",
+        "Angie Katherine Vergara Urrego",
+        "Erika Alejandra Guevara Ramírez",
+        "Gabriel Alberto Garces Varón",
+        "Nelson Amezquita",
+        "Oscar David Puentes Murcia",
+        "Yeimy Carolina Tirado Ospina",
+        "Sergio Leandro Galvis",
+        "Leidy Andrea Avila Sanchez"
+      ]
+    },
+    {
+      "seccional": "San Alberto",
+      "profesionales": [
+        "Andrey Steven Carvajalino Tellez"
+      ]
+    },
+    {
+      "seccional": "Valledupar",
+      "profesionales": [
+        "Cristhian Andres Acevedo Peñaloza",
+        "Oscar David Padilla Arroyo",
+        "Baldomero Domingo Puentes Mercado",
+        "Fredy Giovanni Lugo Leiva"
+      ]
+    },
+    {
+      "seccional": "Venadillo",
+      "profesionales": [
+        "Ana María Bonilla Lombo",
+        "Daniel Francisco Morales Medina",
+        "Jhon Jairo Alvarado Collazos"
+      ]
+    },
+    {
+      "seccional": "Villavicencio",
+      "profesionales": [
+        "David Mauricio Giraldo Nuñez",
+        "Jorlyn Raúl Vanegas Castro",
+        "Astrid Liliana Quevedo Mayorga",
+        "Jorge Hernan Beltran Molina",
+        "German Enrique Castro Medina",
+        "Eliud Garcia Baquero"
+      ]
+    },
+    {
+      "seccional": "Yopal",
+      "profesionales": [
+        "Edward Duván Peralta Muñoz",
+        "Elkin Rodriguez Rodríguez",
+        "Francisco Javer Hernández Guzmán",
+        "Laura Estefania Velasquez Lopez",
+        "Edgar Camilo Gutierrez",
+        "Jorge Andrés Ardila Cuevas",
+        "Asistente FED",
+        "Sindy del Pilar Guzman Garavito"
+      ]
+    }
+  ]
+  
