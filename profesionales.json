@@ -1,547 +1,404 @@
-[
-  {
-    "seccional": "ASIATOL",
-    "profesionales": [
+{
+  "Centro": {
+    "ASIATOL": [
       {
-        "nombre": "Asistente técnico ASIATOL",
-        "zona": "Centro",
+        "profesional": "Asistente técnico ASIATOL",
         "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Acacias",
-    "profesionales": [
+    ],
+    "BOGOTÁ D.C.": [
       {
-        "nombre": "Jose Neftali Luna Santa",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Rubén Leonardo Castro Perilla",
-        "zona": "Llanos",
+        "profesional": "Mateo Fandiño",
         "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Aguachica",
-    "profesionales": [
+    ],
+    "Campoalegre": [
       {
-        "nombre": "Diego harley ortega reyes",
-        "zona": "Caribe seco",
+        "profesional": "Daniel Andrés Auzaque Espinosa",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Bryan Daniel Camacho Henao",
-        "zona": "Caribe seco",
+        "profesional": "Gerson Aldair Ortiz Rengifo",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Diego Benigno Rodriguez",
         "categoria": "FNA"
       }
-    ]
-  },
-  {
-    "seccional": "Aguazul",
-    "profesionales": [
+    ],
+    "Espinal": [
       {
-        "nombre": "Jimy Alexander Chaparro Riveros",
-        "zona": "Llanos",
+        "profesional": "Juan Camilo Barrero Rubio",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Diego Camilo Peña Quemba",
-        "zona": "Llanos",
+        "profesional": "Dario Fernando Pineda Suarez",
         "categoria": "FNA"
       },
       {
-        "nombre": "Jose Omar Ospina G",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Juan Carlos Diaz",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Mayda Audrey Martinez Mejía",
-        "zona": "Llanos",
-        "categoria": "Asistente técnico"
-      }
-    ]
-  },
-  {
-    "seccional": "BOGOTÁ D.C.",
-    "profesionales": [
-      {
-        "nombre": "Mateo Fandiño",
-        "zona": "Centro",
-        "categoria": "Asistente técnico"
-      }
-    ]
-  },
-  {
-    "seccional": "Campoalegre",
-    "profesionales": [
-      {
-        "nombre": "Daniel Andrés Auzaque Espinosa",
-        "zona": "Centro",
+        "profesional": "Mechel Yurany Lopez Rincon",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Gerson Aldair Ortiz Rengifo",
-        "zona": "Centro",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Diego Benigno Rodriguez",
-        "zona": "Centro",
+        "profesional": "Katerine Forero Guarin",
         "categoria": "FNA"
       }
-    ]
-  },
-  {
-    "seccional": "Caucasia",
-    "profesionales": [
+    ],
+    "Ibague": [
       {
-        "nombre": "Blanca Celina Contreras Pabon",
-        "zona": "Caribe húmedo",
+        "profesional": "Juan Sebastian Monroy Colmenares",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Jhonatan Lopez Sanchez",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Patricia De Jesus Lopez Vargas",
-        "zona": "Caribe húmedo",
+        "profesional": "Haider Mauricio Ortiz",
         "categoria": "FNA"
       },
       {
-        "nombre": "Yesid Demoya Diaz",
-        "zona": "Caribe húmedo",
+        "profesional": "German Augusto Vargas",
+        "categoria": "FNA"
+      }
+    ],
+    "Jamundí": [
+      {
+        "profesional": "Jaby Arley Peñuela Carvajal",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Yina Paola Alean Ramos",
-        "zona": "Caribe húmedo",
+        "profesional": "Laura Dayana Marroquin Pinillos",
         "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Cucuta",
-    "profesionales": [
+    ],
+    "Montería": [
       {
-        "nombre": "Belkis Tatiana Pinto Mariño",
-        "zona": "Caribe seco",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Edgar Yesid Bello Caicedo",
-        "zona": "Caribe seco",
+        "profesional": "Cristo Rafael Perez",
         "categoria": "FNA"
-      },
-      {
-        "nombre": "Ricardo Alfredo Cuevas Rios",
-        "zona": "Caribe seco",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Yurley Mayorga Rueda",
-        "zona": "Caribe seco",
-        "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Espinal",
-    "profesionales": [
+    ],
+    "Neiva": [
       {
-        "nombre": "Juan Camilo Barrero Rubio",
-        "zona": "Centro",
+        "profesional": "Leonardo Cardona Sanchez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Dario Fernando Pineda Suarez",
-        "zona": "Centro",
+        "profesional": "Mariana Quiñonez Bonilla",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Anyela Valentina Guzman Vargas",
         "categoria": "FNA"
       },
       {
-        "nombre": "Mechel Yurany Lopez Rincon",
-        "zona": "Centro",
+        "profesional": "Andres Velandia",
+        "categoria": "FNA"
+      }
+    ],
+    "Saldaña": [
+      {
+        "profesional": "Andres Mauricio Gutierrez Mejia",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Katerine Forero Guarin",
-        "zona": "Centro",
+        "profesional": "Angie Katherine Vergara Urrego",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Erika Alejandra Guevara Ramírez",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Gabriel Alberto Garces Varón",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Nelson Amezquita",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Oscar David Puentes Murcia",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Yeimy Carolina Tirado Ospina",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Sergio Leandro Galvis",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Leidy Andrea Avila Sanchez",
+        "categoria": "FNA"
+      }
+    ],
+    "Venadillo": [
+      {
+        "profesional": "Ana María Bonilla Lombo",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Daniel Francisco Morales Medina",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Jhon Jairo Alvarado Collazos",
+        "categoria": "FNA"
+      }
+    ],
+    "Yopal": [
+      {
+        "profesional": "Francisco Javer Hernández Guzmán",
         "categoria": "FNA"
       }
     ]
   },
-  {
-    "seccional": "Fundación",
-    "profesionales": [
+  "Llanos": {
+    "Acacias": [
       {
-        "nombre": "Esneider Mauricio Vera Suarez",
-        "zona": "Caribe seco",
+        "profesional": "Jose Neftali Luna Santa",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Rubén Leonardo Castro Perilla",
         "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Granada",
-    "profesionales": [
+    ],
+    "Aguazul": [
       {
-        "nombre": "Luis Ferney Gutierrez Jaimes",
-        "zona": "Llanos",
+        "profesional": "Jimy Alexander Chaparro Riveros",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Robert Andrey Gaitan Garay",
-        "zona": "Llanos",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Jhonatan Julian Diaz Malaver",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      }
-    ]
-  },
-  {
-    "seccional": "Ibague",
-    "profesionales": [
-      {
-        "nombre": "Juan Sebastian Monroy Colmenares",
-        "zona": "Centro",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Haider Mauricio Ortiz",
-        "zona": "Centro",
+        "profesional": "Diego Camilo Peña Quemba",
         "categoria": "FNA"
       },
       {
-        "nombre": "German Augusto Vargas",
-        "zona": "Centro",
+        "profesional": "Jose Omar Ospina G",
         "categoria": "FNA"
-      }
-    ]
-  },
-  {
-    "seccional": "Jamundí",
-    "profesionales": [
-      {
-        "nombre": "Jaby Arley Peñuela Carvajal",
-        "zona": "Centro",
-        "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Laura Dayana Marroquin Pinillos",
-        "zona": "Centro",
+        "profesional": "Juan Carlos Diaz",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Mayda Audrey Martinez Mejía",
         "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Magangue",
-    "profesionales": [
+    ],
+    "Granada": [
       {
-        "nombre": "Adanies Lugo Gómez",
-        "zona": "Caribe húmedo",
+        "profesional": "Luis Ferney Gutierrez Jaimes",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Estefany Guerrero Muñoz",
-        "zona": "Caribe húmedo",
+        "profesional": "Robert Andrey Gaitan Garay",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Mari Claudia Bustamante",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Maria Jose Durango Vargas",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Yani Sandrid Vargas Mendoza",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Miguel Ramiro Buelvas Jimenez",
-        "zona": "Caribe húmedo",
+        "profesional": "Jhonatan Julian Diaz Malaver",
         "categoria": "FNA"
       }
-    ]
-  },
-  {
-    "seccional": "Montería",
-    "profesionales": [
+    ],
+    "Puerto López": [
       {
-        "nombre": "Diana Marcela Madera Narváez",
-        "zona": "Caribe húmedo",
+        "profesional": "Herbert Ferney Bautista",
+        "categoria": "FNA"
+      }
+    ],
+    "Villavicencio": [
+      {
+        "profesional": "David Mauricio Giraldo Nuñez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Cristo Rafael Perez",
-        "zona": "Centro",
+        "profesional": "Jorlyn Raúl Vanegas Castro",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Astrid Liliana Quevedo Mayorga",
         "categoria": "FNA"
       },
       {
-        "nombre": "Juan Daniel Carvajal Lopez",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Maria Alejandra Contreras Marquez",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Nora Camila Osorio Torres",
-        "zona": "Caribe húmedo",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Enrique Alfredo Saavedra De Castro",
-        "zona": "Caribe húmedo",
+        "profesional": "Jorge Hernan Beltran Molina",
         "categoria": "FNA"
       },
       {
-        "nombre": "Ana Elena De la Ossa Quiñones",
-        "zona": "Caribe húmedo",
+        "profesional": "German Enrique Castro Medina",
         "categoria": "FNA"
       },
       {
-        "nombre": "Shirley Toro",
-        "zona": "Caribe húmedo",
+        "profesional": "Eliud Garcia Baquero",
+        "categoria": "FNA"
+      }
+    ],
+    "Yopal": [
+      {
+        "profesional": "Edward Duván Peralta Muñoz",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Elkin Rodriguez Rodríguez",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Laura Estefania Velasquez Lopez",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Edgar Camilo Gutierrez",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Jorge Andrés Ardila Cuevas",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Asistente FED",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Sindy del Pilar Guzman Garavito",
         "categoria": "FNA"
       }
     ]
   },
-  {
-    "seccional": "Neiva",
-    "profesionales": [
+  "Caribe seco": {
+    "Aguachica": [
       {
-        "nombre": "Leonardo Cardona Sanchez",
-        "zona": "Centro",
+        "profesional": "Diego harley ortega reyes",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Mariana Quiñonez Bonilla",
-        "zona": "Centro",
+        "profesional": "Bryan Daniel Camacho Henao",
+        "categoria": "FNA"
+      }
+    ],
+    "Cucuta": [
+      {
+        "profesional": "Belkis Tatiana Pinto Mariño",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Anyela Valentina Guzman Vargas",
-        "zona": "Centro",
+        "profesional": "Edgar Yesid Bello Caicedo",
         "categoria": "FNA"
       },
       {
-        "nombre": "Andres Velandia",
-        "zona": "Centro",
+        "profesional": "Ricardo Alfredo Cuevas Rios",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Yurley Mayorga Rueda",
+        "categoria": "Asistente técnico"
+      }
+    ],
+    "Fundación": [
+      {
+        "profesional": "Esneider Mauricio Vera Suarez",
+        "categoria": "Asistente técnico"
+      }
+    ],
+    "San Alberto": [
+      {
+        "profesional": "Andrey Steven Carvajalino Tellez",
+        "categoria": "Asistente técnico"
+      }
+    ],
+    "Valledupar": [
+      {
+        "profesional": "Cristhian Andres Acevedo Peñaloza",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Oscar David Padilla Arroyo",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Baldomero Domingo Puentes Mercado",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Fredy Giovanni Lugo Leiva",
         "categoria": "FNA"
       }
     ]
   },
-  {
-    "seccional": "Puerto López",
-    "profesionales": [
+  "Caribe húmedo": {
+    "Caucasia": [
       {
-        "nombre": "Herbert Ferney Bautista",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      }
-    ]
-  },
-  {
-    "seccional": "Saldaña",
-    "profesionales": [
-      {
-        "nombre": "Andres Mauricio Gutierrez Mejia",
-        "zona": "Centro",
+        "profesional": "Blanca Celina Contreras Pabon",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Angie Katherine Vergara Urrego",
-        "zona": "Centro",
+        "profesional": "Jhonatan Lopez Sanchez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Erika Alejandra Guevara Ramírez",
-        "zona": "Centro",
+        "profesional": "Patricia De Jesus Lopez Vargas",
+        "categoria": "FNA"
+      },
+      {
+        "profesional": "Yesid Demoya Diaz",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Gabriel Alberto Garces Varón",
-        "zona": "Centro",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Nelson Amezquita",
-        "zona": "Centro",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Oscar David Puentes Murcia",
-        "zona": "Centro",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Yeimy Carolina Tirado Ospina",
-        "zona": "Centro",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Sergio Leandro Galvis",
-        "zona": "Centro",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Leidy Andrea Avila Sanchez",
-        "zona": "Centro",
-        "categoria": "FNA"
-      }
-    ]
-  },
-  {
-    "seccional": "San Alberto",
-    "profesionales": [
-      {
-        "nombre": "Andrey Steven Carvajalino Tellez",
-        "zona": "Caribe seco",
+        "profesional": "Yina Paola Alean Ramos",
         "categoria": "Asistente técnico"
       }
-    ]
-  },
-  {
-    "seccional": "Valledupar",
-    "profesionales": [
+    ],
+    "Magangue": [
       {
-        "nombre": "Cristhian Andres Acevedo Peñaloza",
-        "zona": "Caribe seco",
+        "profesional": "Adanies Lugo Gómez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Oscar David Padilla Arroyo",
-        "zona": "Caribe seco",
+        "profesional": "Estefany Guerrero Muñoz",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Baldomero Domingo Puentes Mercado",
-        "zona": "Caribe seco",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Fredy Giovanni Lugo Leiva",
-        "zona": "Caribe seco",
-        "categoria": "FNA"
-      }
-    ]
-  },
-  {
-    "seccional": "Venadillo",
-    "profesionales": [
-      {
-        "nombre": "Ana María Bonilla Lombo",
-        "zona": "Centro",
+        "profesional": "Mari Claudia Bustamante",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Daniel Francisco Morales Medina",
-        "zona": "Centro",
+        "profesional": "Maria Jose Durango Vargas",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Jhon Jairo Alvarado Collazos",
-        "zona": "Centro",
+        "profesional": "Yani Sandrid Vargas Mendoza",
+        "categoria": "Asistente técnico"
+      },
+      {
+        "profesional": "Miguel Ramiro Buelvas Jimenez",
         "categoria": "FNA"
       }
-    ]
-  },
-  {
-    "seccional": "Villavicencio",
-    "profesionales": [
+    ],
+    "Montería": [
       {
-        "nombre": "David Mauricio Giraldo Nuñez",
-        "zona": "Llanos",
+        "profesional": "Diana Marcela Madera Narváez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Jorlyn Raúl Vanegas Castro",
-        "zona": "Llanos",
+        "profesional": "Juan Daniel Carvajal Lopez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Astrid Liliana Quevedo Mayorga",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Jorge Hernan Beltran Molina",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "German Enrique Castro Medina",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Eliud Garcia Baquero",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      }
-    ]
-  },
-  {
-    "seccional": "Yopal",
-    "profesionales": [
-      {
-        "nombre": "Edward Duván Peralta Muñoz",
-        "zona": "Llanos",
+        "profesional": "Maria Alejandra Contreras Marquez",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Elkin Rodriguez Rodríguez",
-        "zona": "Llanos",
+        "profesional": "Nora Camila Osorio Torres",
         "categoria": "Asistente técnico"
       },
       {
-        "nombre": "Francisco Javer Hernández Guzmán",
-        "zona": "Centro",
+        "profesional": "Enrique Alfredo Saavedra De Castro",
         "categoria": "FNA"
       },
       {
-        "nombre": "Laura Estefania Velasquez Lopez",
-        "zona": "Llanos",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Edgar Camilo Gutierrez",
-        "zona": "Llanos",
+        "profesional": "Ana Elena De la Ossa Quiñones",
         "categoria": "FNA"
       },
       {
-        "nombre": "Jorge Andrés Ardila Cuevas",
-        "zona": "Llanos",
-        "categoria": "FNA"
-      },
-      {
-        "nombre": "Asistente FED",
-        "zona": "Llanos",
-        "categoria": "Asistente técnico"
-      },
-      {
-        "nombre": "Sindy del Pilar Guzman Garavito",
-        "zona": "Llanos",
+        "profesional": "Shirley Toro",
         "categoria": "FNA"
       }
     ]
   }
-]
+}
