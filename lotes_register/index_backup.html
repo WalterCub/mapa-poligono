@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario Completo con Validaciones y Pregunta Condicional</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        max-width: 700px;
+        margin: 40px auto;
+        background-color: #fff;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      }
+
+      h1, h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      h2 {
+        margin-top: 40px;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 600;
+        color: #444;
+      }
+
+      input, select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 1rem;
+      }
+
+      .error {
+        color: red;
+        font-size: 0.85rem;
+        margin-left: 4px;
+      }
+
+      button {
+        background-color: #0066cc;
+        color: white;
+        padding: 12px 18px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 25px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #004999;
+      }
+
+      .button-secondary {
+        background-color: #777;
+        margin-left: 10px;
+      }
+
+      a button {
+        margin-top: 10px;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background-color: #eee;
+        margin: 30px 0;
+      }
+      @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      input, select, textarea, button {
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      h1, h2 {
+        font-size: 1.1rem;
+      }
+
+      label {
+        font-size: 0.95rem;
+      }
+
+      button {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 250px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 14px 20px;
+      position: fixed;
+      z-index: 999;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      font-size: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .toast.show {
+      visibility: visible;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+    @keyframes fadein {
+      from { bottom: 0; opacity: 0; }
+      to { bottom: 30px; opacity: 1; }
+    }
+
+    @keyframes fadeout {
+      from { bottom: 30px; opacity: 1; }
+      to { bottom: 0; opacity: 0; }
+    }
+
+    /* Overlay general */
+    .overlay {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Contenido del overlay */
+    .overlay-content {
+      background: white;
+      padding: 25px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    /* Spinner animado */
+    .spinner {
+      border: 6px solid #ccc;
+      border-top: 6px solid #0066cc;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: girar 1s linear infinite;
+      margin: 0 auto;
+    }
+
+    @keyframes girar {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+  </style>
+
+  </head>
+  <body>
+    <div class="container">
+    <form id="formularioLotes" onsubmit="event.preventDefault(); enviarDatos();">
+
+    <h1> Formulario de Registro de Lotes <h1>
+    <h2>Ubicación</h1>
+    
+    <!-- Sección de Ubicación (listas dinámicas) -->
+    <label for="departamento">Departamento <span class="error">*</span></label>
+    <select id="departamento" required>
+      <option value="">Seleccione un departamento</option>
+    </select>
+
+    <label for="municipio">Municipio <span class="error">*</span></label>
+    <select id="municipio" required>
+      <option value="">Seleccione un municipio</option>
+    </select>
+
+    <label for="vereda">Vereda <span class="error">*</span></label>
+    <select id="vereda" required>
+      <option value="">Seleccione una vereda</option>
+    </select>
+    
+    <hr>
+    <h2> Ingeniero Responsable </h1> 
+
+      <label for="zona">Zona <span class="error">*</span></label>
+      <select id="zona" required>
+        <option value="">Seleccione una zona</option>
+      </select>
+
+      <label for="seccional">Seccional <span class="error">*</span></label>
+      <select id="seccional" required>
+        <option value="">Seleccione una seccional</option>
+      </select>
+
+      <label for="profesional">Profesional <span class="error">*</span></label>
+      <select id="profesional" required>
+        <option value="">Seleccione un profesional</option>
+      </select>
+
+
+
+    <hr>
+    <h2> Registro de Agricultor</h1>
+
+
+    <!-- Sección de Datos Personales -->
+
+    <label for="nombre">Nombre de Agricultor<span class="error">*</span></label>
+    <input type="text" id="nombre"  required>
+
+    <hr>
+    <h2> Registro de Finca</h1>
+
+    <label for="nombreFinca">Nombre de la Finca <span class="error">*</span></label>
+    <input type="text" id="nombreFinca" required>
+
+    <label for="sistemaCultivo">Sistema de cultivo <span class="error">*</span></label>
+    <select id="sistemaCultivo" required>
+      <option value="">Seleccione una opción</option>
+      <option value="Riego">Riego</option>
+      <option value="Secano">Secano</option>
+      <option value="Riego-Piscinas">Riego-Piscinas</option>
+      
+    </select>
+
+
+    <label for="coordenadasFinca">Coordenadas de la finca (Latitud, Longitud) <span class="error">*</span></label>
+    <input type="text" id="coordenadasFinca" placeholder="Ej: 5.321, -72.321" required>
+
+    <hr>
+    <h2> Registro de Lotes</h1>
+
+    <label for="nombreLote">Nombre del lote <span class="error">*</span></label>
+    <input type="text" id="nombreLote" required>
+
+    <label for="areaLote">Área del lote (Hectáreas) <span class="error">*</span></label>
+    <input type="text" id="areaLote" required>
+
+    <label for="poligono">Poligono del lote en formato JSON <span class="error"></label>
+    <input type="text" id="poligono" >
+
+    <a href="https://waltercub.github.io/mapa-poligono/" target="_blank">
+      <button type="button">Abrir herramienta de poligonos</button>
+    </a>
+
+    
+
+    <button type="submit">Enviar</button>
+
+    </form>
+
+    <script>
+      let data = [];
+
+      // Cargar datos JSON desde GitHub Pages (ajusta la URL)
+      fetch('https://waltercub.github.io/mapa-poligono/divipolaufc.json')
+        .then(response => response.json())
+        .then(jsonData => {
+          data = jsonData;
+          const deptoSelect = document.getElementById('departamento');
+          // Obtener lista única de departamentos
+          const uniqueDepartments = [...new Set(data.map(item => item.departamento))].sort();
+          uniqueDepartments.forEach(depto => {
+            const option = document.createElement('option');
+            option.value = depto;
+            option.textContent = depto;
+            deptoSelect.appendChild(option);
+          });
+        })
+        .catch(err => console.error('Error al cargar el JSON:', err));
+
+      // Actualizar municipios al cambiar departamento
+      document.getElementById('departamento').addEventListener('change', e => {
+        const selectedDepto = e.target.value;
+        const muniSelect = document.getElementById('municipio');
+        const veredaSelect = document.getElementById('vereda');
+        muniSelect.innerHTML = '<option value="">Seleccione un municipio</option>';
+        veredaSelect.innerHTML = '<option value="">Seleccione una vereda</option>';
+
+        if (selectedDepto) {
+          const filtered = data.filter(item => item.departamento === selectedDepto);
+          const uniqueMunicipios = [...new Set(filtered.map(item => item.municipio))].sort();
+          uniqueMunicipios.forEach(muni => {
+            const option = document.createElement('option');
+            option.value = muni;
+            option.textContent = muni;
+            muniSelect.appendChild(option);
+          });
+        }
+      });
+
+      // Actualizar veredas al cambiar municipio
+      document.getElementById('municipio').addEventListener('change', e => {
+        const selectedDepto = document.getElementById('departamento').value;
+        const selectedMuni = e.target.value;
+        const veredaSelect = document.getElementById('vereda');
+        veredaSelect.innerHTML = '<option value="">Seleccione una vereda</option>';
+
+        if (selectedDepto && selectedMuni) {
+          const filtered = data.filter(item => 
+            item.departamento === selectedDepto && item.municipio === selectedMuni
+          );
+          const uniqueVeredas = [...new Set(filtered.map(item => item.vereda))].sort();
+          uniqueVeredas.forEach(ver => {
+            const option = document.createElement('option');
+            option.value = ver;
+            option.textContent = ver;
+            veredaSelect.appendChild(option);
+          });
+        }
+      });
+
+
+
+      // PROFESIONAL RESPONSABLE
+
+      let profesionalesData = [];
+
+      fetch('https://waltercub.github.io/mapa-poligono/profesionales.json')
+      .then(response => response.json())
+      .then(json => {
+        profesionalesData = json;
+
+        const zonaSelect = document.getElementById('zona');
+        const zonas = Object.keys(profesionalesData); // Claves principales
+
+        zonas.forEach(z => {
+          const option = document.createElement('option');
+          option.value = z;
+          option.textContent = z;
+          zonaSelect.appendChild(option);
+        });
+      })
+      .catch(error => console.error('Error cargando JSON de profesionales:', error));
+
+
+      // Cambiar seccionales según zona
+      document.getElementById('zona').addEventListener('change', function () {
+        const selectedZona = this.value;
+        const seccionalSelect = document.getElementById('seccional');
+        const profesionalSelect = document.getElementById('profesional');
+
+        seccionalSelect.innerHTML = '<option value="">Seleccione una seccional</option>';
+        profesionalSelect.innerHTML = '<option value="">Seleccione un profesional</option>';
+
+        if (selectedZona && profesionalesData[selectedZona]) {
+          const seccionales = Object.keys(profesionalesData[selectedZona]);
+          seccionales.forEach(sec => {
+            const option = document.createElement('option');
+            option.value = sec;
+            option.textContent = sec;
+            seccionalSelect.appendChild(option);
+          });
+        }
+      });
+
+
+      document.getElementById('seccional').addEventListener('change', function () {
+        const selectedSeccional = this.value;
+        const profesionalSelect = document.getElementById('profesional');
+        profesionalSelect.innerHTML = '<option value="">Seleccione un profesional</option>';
+
+        // Buscar la zona que contiene esta seccional
+        for (const zona in profesionalesData) {
+          if (profesionalesData[zona][selectedSeccional]) {
+            const profesionales = profesionalesData[zona][selectedSeccional];
+
+            // Filtrar solo los de categoría FNA
+            const soloFNA = profesionales.filter(p => p.categoria === "FNA");
+
+            // Agregar opciones al select
+            soloFNA.forEach(p => {
+              const option = document.createElement('option');
+              option.value = p.profesional;
+              option.textContent = p.profesional;
+              profesionalSelect.appendChild(option);
+            });
+
+            break; // Se encontró la seccional, salir del loop
+          }
+        }
+      });
+
+
+
+
+      function toTitleCase(str) {
+        return str
+          .toLowerCase()
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+      }
+      
+      // Validación para número de documento: 7 a 11 dígitos
+      function validarDocumento(doc) {
+        const regex = /^\d{7,11}$/;
+        return regex.test(doc);
+      }
+
+      function validarAreaArroz(area) {
+        const regex = /^-?\d+(\.\d+)?$/;
+        return regex.test(area);
+      }
+
+      function validarCoordenadas(coord) {
+       const regex = /^-?\d+(\.\d+)?\s*,\s*-?\d+(\.\d+)?$/;
+       return regex.test(coord);
+      }
+
+      function validarNumero(num) {
+        const n = parseInt(num, 10);
+        return /^\d{1,2}$/.test(num) && n >= 1 && n <= 99;
+      }
+
+      function mostrarCarga(mostrar) {
+        document.getElementById('overlay').style.display = mostrar ? 'flex' : 'none';
+      }
+
+
+      // Función para enviar datos
+      function enviarDatos() {
+        mostrarCarga(true); // Mostrar la pantalla de carga inmediatamente
+
+        // Datos de ubicación
+        const departamento = document.getElementById('departamento').value;
+        const municipio = document.getElementById('municipio').value;
+        const vereda = document.getElementById('vereda').value;
+        const zona = document.getElementById('zona').value.trim();
+        const seccional = document.getElementById('seccional').value.trim();
+        const profesional = document.getElementById('profesional').value.trim();
+        const nombre = toTitleCase(document.getElementById('nombre').value.trim());
+        const nombreFinca = toTitleCase(document.getElementById('nombreFinca').value.trim());
+        const sistemaCultivo = document.getElementById('sistemaCultivo').value;
+        const coordenadasFinca = document.getElementById('coordenadasFinca').value.trim();
+
+        // Lote
+        const nombreLote = toTitleCase(document.getElementById('nombreLote').value.trim());
+        const areaLote = document.getElementById('areaLote').value.trim();
+        const poligono = document.getElementById('poligono').value.trim();
+
+        // Validaciones obligatorias
+        if (!departamento || !municipio || !vereda || !zona || !seccional || !profesional || !nombre || !nombreFinca || !sistemaCultivo || !coordenadasFinca || !nombreLote || !areaLote) {
+          mostrarCarga(false);
+          mostrarToast('Por favor, complete todos los campos obligatorios.');
+          return;
+        }
+
+        if (!validarCoordenadas(coordenadasFinca)) {
+          mostrarCarga(false);
+          mostrarToast('La coordenada no cumple el formato solicitado');
+          return;
+        }
+
+        if (!validarAreaArroz(areaLote)) {
+          mostrarCarga(false);
+          mostrarToast('Por favor, ingrese un valor numérico válido para el área del lote, usando punto como separador decimal.');
+          return;
+        }
+
+        const formData = {
+          departamento,
+          municipio,
+          vereda,
+          zona,
+          seccional,
+          profesional,
+          nombre,
+          nombreFinca,
+          sistemaCultivo,
+          coordenadasFinca,
+          nombreLote,
+          areaLote,
+          poligono
+        };
+
+        // Enviar datos a través de google.script.run
+        google.script.run.withSuccessHandler(function (response) {
+          mostrarCarga(false); // Ocultar al finalizar
+          mostrarToast(response);
+          document.getElementById("formularioLotes").reset();
+        }).guardarDatos(formData);
+      }
+      function mostrarToast(mensaje) {
+        const toast = document.getElementById("toast");
+        toast.textContent = mensaje;
+        toast.className = "toast show";
+        setTimeout(() => {
+          toast.className = toast.className.replace("show", "");
+        }, 3000);
+      }
+
+
+    </script>
+       <div id="toast" class="toast"></div>
+
+    <!-- Pantalla de carga con spinner -->
+    <div id="overlay" class="overlay">
+      <div class="overlay-content">
+        <div class="spinner"></div>
+        <p style="margin-top: 15px;">Enviando datos... Por favor espera.</p>
+      </div>
+    </div>
+
+  </body>
+</html>
