@@ -296,7 +296,7 @@
       let data = [];
 
       // Cargar datos JSON desde GitHub Pages (ajusta la URL)
-      fetch('https://waltercub.github.io/mapa-poligono/divipolaufc.json')
+      fetch('https://waltercub.github.io/mapa-poligono/files/divipolaufc.json')
         .then(response => response.json())
         .then(jsonData => {
           data = jsonData;
@@ -357,7 +357,7 @@
 
           // ...existing code...
     // Cargar variedades desde GitHub
-    fetch('https://waltercub.github.io/mapa-poligono/variedades.json')
+    fetch('https://waltercub.github.io/mapa-poligono/files/variedades.json')
       .then(response => response.json())
       .then(variedades => {
         const variedadSelect = document.getElementById('variedad');
@@ -391,7 +391,7 @@
 
       let profesionalesData = [];
 
-      fetch('https://waltercub.github.io/mapa-poligono/profesionales.json')
+      fetch('https://waltercub.github.io/mapa-poligono/files/profesionales.json')
       .then(response => response.json())
       .then(json => {
         profesionalesData = json;
