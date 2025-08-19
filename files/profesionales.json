@@ -72,12 +72,6 @@
         "categoria": "Asistente técnico"
       }
     ],
-    "Montería": [
-      {
-        "profesional": "Cristo Rafael Perez",
-        "categoria": "FNA"
-      }
-    ],
     "Neiva": [
       {
         "profesional": "Leonardo Cardona Sanchez",
@@ -413,6 +407,10 @@
       }
     ],
     "Montería": [
+            {
+        "profesional": "Cristo Rafael Perez",
+        "categoria": "FNA"
+      },
       {
         "profesional": "Diana Marcela Madera Narváez",
         "categoria": "Asistente técnico"
