@@ -112,7 +112,11 @@
       {
         "profesional": "Edward Duván Peralta Muñoz",
         "categoria": "ASESOR TECNICO INTEGRAL"
-      }
+      },
+            {
+        "profesional": "Laura Estefania Velasquez Lopez",
+        "categoria": "ASESOR TECNICO INTEGRAL"
+      },
     ],
     "PORE": [
       {
@@ -123,6 +127,14 @@
     "YOPAL": [
       {
         "profesional": "Laura Estefania Velasquez Lopez",
+        "categoria": "ASESOR TECNICO INTEGRAL"
+      },
+            {
+        "profesional": "Elkin  Rodriguez Rodriguez",
+        "categoria": "ASESOR TECNICO INTEGRAL"
+      },
+            {
+        "profesional": "Edward Duván Peralta Muñoz",
         "categoria": "ASESOR TECNICO INTEGRAL"
       },
       {
